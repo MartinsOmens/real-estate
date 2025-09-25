@@ -1,9 +1,15 @@
 import React from 'react'
 import { assets, testimonialsData } from '../assets/assets';
+import { motion } from "motion/react"
 
 const Testominials = () => {
   return (
-    <div className='w-full py-10 px-6 my-20 mx-auto md:px-20 lg:px-32 overflow-hidden' id='Testimonials'>
+    <motion.div 
+    initial={{opacity: 0, x: 100}}
+    transition = {{duration: 1} }
+    whileInView={{opacity: 1, x: 0}}
+    viewport={{once: true}}
+    className='w-full py-10 px-6 my-20 mx-auto md:px-20 lg:px-32 overflow-hidden' id='Testimonials'>
         <div className='text-center'>
             <h2 className='text-2xl sm:text-4xl font-bold mb-2'>Customer <span className='underline underline-offset-4 decoration-1 under font-light'>Testimonials</span></h2>
             <p className='text-gray-500 max-w-80 mx-auto mb-2'>Real Stories from those who found home with us</p>
@@ -26,7 +32,7 @@ const Testominials = () => {
             ))}
         </div>
     
-    </div>
+    </motion.div>
   )
 }
 
