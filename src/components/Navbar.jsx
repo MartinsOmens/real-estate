@@ -4,7 +4,8 @@ import { assets } from '../assets/assets';
 const Navbar = () => {
 
     const [mobileMenu, setMobileMenu] = useState(false);
-    
+  
+     
      useEffect(() =>{
         if(mobileMenu){
             document.body.style.overflow = 'hidden';
@@ -16,10 +17,10 @@ const Navbar = () => {
             document.body.style.overflow = 'auto';
         }
     }, [mobileMenu])
-   
+
   return (
-    <div className='absolute top-0 left-0 w-full z-10'>
-        <div className='w-full flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 bg-transparent'>
+    <div className='absolute top-0 left-0 w-full z-50 '>
+        <div className={`w-full flex justify-between items-center py-4 px-6 md:px-20 lg:px-32`}>
             <img src={assets.logo} alt="" />
             <ul className=' hidden md:flex gap-7 text-white'>
                 <li><a href="#Header" className='cursor-pointer hover:text-gray-400'>Home</a></li>

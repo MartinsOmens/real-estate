@@ -1,0 +1,16 @@
+  const [scrolled, setScrolled] = useState(false);
+
+      useEffect(() => {
+      const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+     <div className={`w-full flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 ${scrolled ? "bg-gray-200 text-black shadow-md" : "bg-transparent"} `}></div>
